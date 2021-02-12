@@ -173,6 +173,7 @@ const metodos = {
     },
 
     borrarCalculadora: function() {
+        propiedades.decimales = false;
         propiedades.operaciones.innerHTML = 0;
     }
 }
