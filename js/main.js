@@ -8,6 +8,7 @@ const propiedades = {
     digito: null,
     operaciones: document.querySelector("#operaciones"),
     cantidadSignos: 0,
+    decimales: false
 
 
 }
@@ -29,6 +30,7 @@ const metodos = {
 
         propiedades.accion = event.target.getAttribute("class");
         propiedades.digito = event.target.innerHTML;
+        
         metodos.calculadora(propiedades.accion, propiedades.digito);
     },
 
@@ -50,15 +52,19 @@ const metodos = {
                     propiedades.operaciones.innerHTML += digito;
                 }
                 propiedades.cantidadSignos++;
+                propiedades.decimales = false;
             break;
             
-            case "decimal":
-                //saca el punto
+            case "boton decimal":
+                if(!propiedades.decimales && propiedades.cantidadSignos==0 && propiedades.operaciones.innerHTML!=0)
+                {
+                    propiedades.operaciones.innerHTML += digito;
+                    propiedades.decimales = true;
+                }
             break;
             
             case "equalBoton":
-                propiedades.cantidadSignos = 0;
-                //saca el igual
+                document.querySelector("#operaciones").innerHTML = eval(document.querySelector("#operaciones").innerHTML);
             break;
         }
     },
