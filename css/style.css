@@ -4,6 +4,7 @@
     text-decoration: none;
     list-style: none;
     font-family: sans-serif;
+    background: darkslategray;
 }
 
 #center {
@@ -13,7 +14,7 @@
     height: 60px;
     text-align: center;
     line-height: 60px;
-    background: darkslategray;
+    background: #222;
     color: wheat;
     font-weight: bold;
     border: 5px solid #ccc;
@@ -24,8 +25,102 @@
     position: relative;
     margin: 5% auto;
     width: 400px;
-    height: 600px;
+    height: 625px;
     border: 1px solid #555;
     border-radius: 20px;
     background: #aaa;
+}
+
+#calculadora ul {
+    margin-left: 5px;
+}
+
+#operaciones {
+    position: relative;
+    margin: 20px auto;
+    width: 70%;
+    background: wheat;
+    border: 1px solid #555;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px #666;
+    padding: 10%;
+    text-align: right;
+    font-size: 25px;
+    overflow: hidden;
+}
+
+.boton {
+    float: left;
+    padding: 32px;
+    width: 15px;
+    text-align: center;
+    margin: 8px;
+    background: #333;
+    color: white;
+    border: 1px solid #aaa;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px #222;
+    font-weight: bold;
+    cursor: pointer;
+
+}
+
+.botonOp {
+    float: left;
+    padding: 32px;
+    width: 15px;
+    text-align: center;
+    margin: 8px;
+    background: #555;
+    color: white;
+    border: 1px solid #aaa;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px #222;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.equalBoton{
+  
+        float: left;
+        padding: 32px;
+        width: 15px;
+        text-align: center;
+        margin: 8px;
+        background: darkred;
+        color: white;
+        border: 1px solid #aaa;
+        border-radius: 10px;
+        box-shadow: 5px 5px 10px #222;
+        font-weight: bold;
+        cursor: pointer;
+    
+}
+
+.botonBorrar {
+    position: absolute;
+    bottom: 10px;
+    padding: 5px 10px 5px 20px;
+    width: 60px;
+    background: coral;
+    border-radius: 10px;
+    left: 150px;
+    border: 5px solid rgb(177, 69, 30);
+    color: white;
+    cursor: pointer;
+    box-shadow: 5px 5px 10px #222;
+}
+
+#calculadora ul li:hover{
+    background: cornsilk;
+    color: #000;
+}
+
+.equalBoton:hover{
+    background: red !important;
+}
+
+#calculadora ul li:active{
+    background:lightsteelblue !important;
+    color: #000;
 }
