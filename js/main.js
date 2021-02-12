@@ -5,6 +5,10 @@ Objeto con las propiedades de la calculadora
 const propiedades = {
     teclas: document.querySelectorAll("#calculadora ul li"),
     accion: null,
+    digito: null,
+    operaciones: document.querySelector("#operaciones"),
+    cantidadSignos: 0,
+
 
 }
 
@@ -24,18 +28,28 @@ const metodos = {
     teclaPulsada: function(event) {
 
         propiedades.accion = event.target.getAttribute("class");
-        metodos.calculadora(propiedades.accion);
+        propiedades.digito = event.target.innerHTML;
+        metodos.calculadora(propiedades.accion, propiedades.digito);
     },
 
-    calculadora: function(accion) {
+    calculadora: function(accion, digito) {
         
         switch(accion) {
             case "boton":
-                //saca el numero
+                propiedades.cantidadSignos = 0;
+                if(propiedades.operaciones.innerHTML==0) {
+                    propiedades.operaciones.innerHTML = digito;
+                }
+                else {
+                    propiedades.operaciones.innerHTML += digito;
+                }
             break;
             
             case "botonOp":
-                //saca la operacion
+                if(propiedades.cantidadSignos==0 && propiedades.operaciones.innerHTML!=0){
+                    propiedades.operaciones.innerHTML += digito;
+                }
+                propiedades.cantidadSignos++;
             break;
             
             case "decimal":
@@ -43,9 +57,14 @@ const metodos = {
             break;
             
             case "equalBoton":
+                propiedades.cantidadSignos = 0;
                 //saca el igual
             break;
         }
+    },
+
+    borrarCalculadora: function() {
+        propiedades.operaciones.innerHTML = 0;
     }
 }
 
