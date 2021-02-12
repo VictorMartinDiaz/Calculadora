@@ -163,7 +163,7 @@ const metodos = {
             case "equalBoton":
                 document.querySelector("#operaciones").innerHTML = eval(document.querySelector("#operaciones").innerHTML);
 
-                if(!Number.isInteger((document.querySelector("#operaciones").innerHTML))){
+                if(!Number.isInteger((document.querySelector("#operaciones").innerHTML)) && propiedades.operaciones.innerHTML!=0){
                     propiedades.decimales = true;
                 }
 
